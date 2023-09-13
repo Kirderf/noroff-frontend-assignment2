@@ -1,12 +1,40 @@
-
-import './App.css'
+import ReactDOM from 'react-dom/client';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from "react-router-dom";
+import Profile from './pages/profile';
+import Login from './pages/login';
+import Translation from './pages/translation';
+import Error from './pages/error';
 
 function App() {
-
   return (
-    <h1 className="text-3xl font-bold underline">
-      <input type="text" class="py-3 px-5 block w-full border-gray-200 rounded-full text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400" placeholder="Input text" />
-    </h1>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/translate"
+          element={<Translation/>}/>
+          <Route
+           path= "/login"
+           element={<Login/>}
+           /> 
+           <Route
+           path= "/profile"
+           element={<Profile/>}
+           /> 
+           {/* TODO NAVIGATE TO LOGIN */}
+           <Route
+           path= "/"
+           element={<p>ll</p>}
+           /> 
+           <Route
+           path= "/error"
+           element={<Error/>}
+           /> 
+      </Routes>
+  </BrowserRouter>
   )
 }
 
