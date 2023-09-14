@@ -1,4 +1,5 @@
 import React from 'react'
+import AuthGuard from '../auth/AuthGuard'
 
 const Translation = () => {
   return (
@@ -7,4 +8,4 @@ const Translation = () => {
   )
 }
 
-export default Translation
+export default AuthGuard(Translation)
