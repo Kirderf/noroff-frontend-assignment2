@@ -8,6 +8,11 @@ body {
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    font-family: Sanchez, serif;
+}
+
+.centering {
     max-width: 80%;
-    margin: auto;
+    margin: 0 auto;
+    width: 100%;
 }

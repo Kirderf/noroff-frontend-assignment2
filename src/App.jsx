@@ -8,10 +8,12 @@ import Profile from './pages/profile';
 import Login from './pages/login';
 import Translation from './pages/translation';
 import Error from './pages/error';
+import Header from './components/header/Header';
 
 function App() {
   return (
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route
           path="/translate"
