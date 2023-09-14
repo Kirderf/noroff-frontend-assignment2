@@ -23,25 +23,22 @@ const Translation = () => {
       </div>
       <div className="centering">
         <div className="w-full shadow-2xl rounded-2xl h-auto mt-20 flex flex-col justify-center items-start">
-          <div className="p-5 flex flex-wrap h-auto">
-            {
-              //i have a set of image from A-Z, for each letter in the transelation, i want to display the image of that letter
-              transelation
-                .toLowerCase()
-                .split("")
-                .filter((letter) => letter !== " ")
-                .map((letter, index) => {
-                  console.log(letter);
-                  return (
-                    <img
-                      key={index}
-                      src={`./src/assets/individial_signs/${letter}.png`}
-                      alt={letter}
-                      className="w-16 h-16"
-                    />
-                  );
-                })
-            }
+          <div className="p-5 flex flex-wrap h-64">
+            {transelation
+              .toLowerCase()
+              .split("")
+              .filter((letter) => letter !== " ")
+              .map((letter, index) => {
+                console.log(letter);
+                return (
+                  <img
+                    key={index}
+                    src={`./src/assets/individial_signs/${letter}.png`}
+                    alt={letter}
+                    className="w-16 h-16"
+                  />
+                );
+              })}
           </div>
           <span className="grow"></span>
           <div className="w-full bg-purple rounded-b-2xl h-12 flex justify-start items-center">

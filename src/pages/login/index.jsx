@@ -4,7 +4,7 @@ import InputField from "../../components/InputField";
 const Login = () => {
   return (
     <section className="flex flex-col relative">
-      <div className=" bg-yellow w-full flex items-center justify-center">
+      <div className=" bg-yellow w-full h-96 flex items-center justify-center">
         <div className="centering"></div>
       </div>
       <div className="centering">
