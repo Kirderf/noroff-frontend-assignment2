@@ -1,8 +1,10 @@
 import React from 'react'
+import InputField from '../../components/InputField'
+
 
 const Profile = () => {
   return (
-    <div>profile</div>
+    <div><InputField placeHolder={"Tst"} /></div>
   )
 }
 
