@@ -1,5 +1,6 @@
 import React from 'react'
 import InputField from '../../components/InputField'
+import AuthGuard from '../auth/AuthGuard'
 
 const Profile = () => {
   return (
@@ -7,4 +8,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default AuthGuard(Profile)
