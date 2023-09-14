@@ -13,7 +13,7 @@ import Header from './components/header/Header';
 function App() {
   return (
     <BrowserRouter>
-    <Header>
+    <Header />
       <Routes>
         <Route
           path="/translate"
@@ -36,7 +36,6 @@ function App() {
            element={<Error/>}
            /> 
       </Routes>
-      </Header>
   </BrowserRouter>
   )
 }
