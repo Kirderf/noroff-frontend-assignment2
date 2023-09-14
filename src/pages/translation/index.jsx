@@ -1,7 +1,9 @@
 import React from "react";
 
 import InputField from "../../components/InputField";
-import AuthGuard from "../auth/AuthGuard";
+
+import AuthGuard from '../auth/AuthGuard'
+
 
 const Translation = () => {
   const [transelation, setTranslation] = React.useState("");
