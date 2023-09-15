@@ -4,7 +4,7 @@ export const UserContext = createContext(null);
 
 export const useUser = () => useContext(UserContext);
 
-export const UserProvider = ({ children }) => {
+const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   return (
@@ -13,3 +13,4 @@ export const UserProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
+export default UserProvider;

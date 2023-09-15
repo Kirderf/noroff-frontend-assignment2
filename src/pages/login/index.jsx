@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import InputField from "../../components/inputField/InputField";
 import { useUser } from "../../contexts/UserProvider";
 import { loginOrCreateByUsername } from "../../services/UserService";
 
 function Login() {
-  const { setUser, user } = useUser();
+  const { user, setUser } = useUser();
 
   async function handleLogin(inputWord) {
     event.preventDefault();
