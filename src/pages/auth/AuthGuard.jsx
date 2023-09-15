@@ -2,18 +2,11 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 const AuthGuard = (Component) => (props) => {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-  function login() {
-    setIsAuthenticated(true);
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (!user) {
+    return <Navigate to="/login" />;
+  }else{    
+  return  <Component {...props} />;
   }
-  function logout() {
-    setIsAuthenticated(false);
-  }
-  return isAuthenticated ? (
-    <Component {...props} />
-  ) : (
-    <Navigate to="/login" state={{ from: props.location }} />
-  );
 };
-
 export default AuthGuard;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import InputField from "../../components/inputField/InputField";
 import { useUser } from "../../contexts/UserProvider";
 import { loginOrCreateByUsername } from "../../services/UserService";
+import { Navigate } from "react-router-dom";
 
 function Login() {
   const { user, setUser } = useUser();
@@ -52,6 +53,7 @@ function Login() {
         <div className="centering">
           <div className="shadow-2xl rounded-2xl h-auto w-full flex flex-col justify-center items-start bg-white">
             <div className="flex flex-wrap h-auto p-10 w-full">
+            {user && (<Navigate to="/translate" replace={true} />)}
               <InputField placeHolder={"Username:"} onSubmit={handleLogin} />
             </div>
             <div className="w-full bg-purple rounded-b-2xl h-12 flex justify-start items-center">
