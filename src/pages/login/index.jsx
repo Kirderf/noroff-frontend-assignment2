@@ -44,6 +44,7 @@ function Login() {
         <div className="centering">
           <div className="shadow-2xl rounded-2xl h-auto w-full flex flex-col justify-center items-start bg-white animate-ease-in animate-once animate-fade-up">
             <div className="flex flex-wrap h-auto p-10 w-full">
+              {user && <Navigate to="/translate" replace={true} />}
               <InputField placeHolder={"Username:"} onSubmit={handleLogin} />
             </div>
             <div className="w-full bg-purple rounded-b-2xl h-12 flex justify-start items-center">
