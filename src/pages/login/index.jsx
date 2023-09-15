@@ -13,6 +13,12 @@ function Login() {
     event.preventDefault();
   }
 
+  useEffect(() => {
+    if (user && user.user) {
+      console.log("User: ", user.user.username);
+    }
+  }, [user]);
+
   return (
     <section className="flex flex-col relative">
       <div className=" bg-yellow w-full h-72 flex items-center justify-center">
