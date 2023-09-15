@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import InputField from "../../components/inputField/InputField";
 import { useUser } from "../../contexts/UserProvider";
 import { loginOrCreateByUsername } from "../../services/UserService";
@@ -8,10 +8,18 @@ function Login() {
 
   async function handleLogin(inputWord) {
     event.preventDefault();
-    console.log(await loginOrCreateByUsername(inputWord));
-    setUser({ ...(await loginOrCreateByUsername(inputWord)) });
-    console.log("User: ", user.user.username);
+
+    const newUser = await loginOrCreateByUsername(inputWord);
+    console.log(newUser);
+
+    setUser(newUser);
   }
+
+  useEffect(() => {
+    if (user && user.user) {
+      console.log("User: ", user.user.username);
+    }
+  }, [user]);
 
   return (
     <section className="flex flex-col relative">

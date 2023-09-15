@@ -15,7 +15,7 @@ const Header = () => {
           <div id="navbar-image-and-text-2" className="grow block gap-2">
             <div className="flex flex-row items-center justify-end">
               <div className=" bg-yellow-dark rounded-2xl pr-14 pl-5 py-0.5">
-                <p className="text-white">{user.user.username}</p>
+                <p className="text-white">{user?.user?.username}</p>
               </div>
               <img
                 className="w-12 h-auto absolute  bg-yellow-dark rounded-full"
