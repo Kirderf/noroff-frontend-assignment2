@@ -10,7 +10,7 @@ const AuthGuard = (Component) => (props) => {
     setIsAuthenticated(false);
   }
   return isAuthenticated ? (
-    <Component {...props} login={login} logout={logout} />
+    <Component {...props} />
   ) : (
     <Navigate to="/login" state={{ from: props.location }} />
   );
