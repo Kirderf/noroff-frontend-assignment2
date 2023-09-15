@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 const apiURL = "https://atlantic-little-snipe.glitch.me";
 const apiKey = "";
+=======
+const apiURL = "your-api-url-goes-here";
+const apiKey = "your-public-api-key-goes-here";
+>>>>>>> 559b17f (changes to header styling, userContext and userservice)
 
 const headers = {
   "Content-Type": "application/json",
   "X-API-Key": apiKey,
 };
 
+<<<<<<< HEAD
 export default {};
 
 export const loginOrCreateByUsername = async (username) => {
@@ -34,6 +40,32 @@ export const createUser = async (username) => {
 };
 
 export const updateUserTranslations = async (userId, translations) => {
+=======
+const getUserByUsername = async (username) => {
+  const response = await fetch(`${apiURL}/translations?username=${username}`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch user by username");
+  }
+  return await response.json();
+};
+
+const createUser = async (username, translations = []) => {
+  const response = await fetch(`${apiURL}/translations`, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify({
+      username,
+      translations,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error("Could not create new user");
+  }
+  return await response.json();
+};
+
+const updateUserTranslations = async (userId, translations) => {
+>>>>>>> 559b17f (changes to header styling, userContext and userservice)
   const response = await fetch(`${apiURL}/translations/${userId}`, {
     method: "PATCH",
     headers: headers,
@@ -46,3 +78,8 @@ export const updateUserTranslations = async (userId, translations) => {
   }
   return await response.json();
 };
+<<<<<<< HEAD
+=======
+
+export { getUserByUsername, createUser, updateUserTranslations };
+>>>>>>> 559b17f (changes to header styling, userContext and userservice)

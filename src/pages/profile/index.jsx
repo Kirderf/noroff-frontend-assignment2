@@ -3,6 +3,7 @@ import InputField from "../../components/inputField/InputField";
 import AuthGuard from "../auth/AuthGuard";
 
 const Profile = () => {
+<<<<<<< HEAD
   const list = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis", "ke sadh jksdhakj", "dæ dsahjk asdhkj", "går dshjk dashkj","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis", "ke sadh jksdhakj", "dæ dsahjk asdhkj", "går dshjk dashkj"]
   return (
     <div className="bg-yellow w-full h-44 pt-8">
@@ -34,4 +35,14 @@ const Profile = () => {
   )
 }
 
+<<<<<<< HEAD
 export default AuthGuard(Profile);
+=======
+export default Profile
+=======
+  return <div></div>;
+};
+
+export default AuthGuard(Profile);
+>>>>>>> fb27d39 (changes to header styling, userContext and userservice)
+>>>>>>> 559b17f (changes to header styling, userContext and userservice)
