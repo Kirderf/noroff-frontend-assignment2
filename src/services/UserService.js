@@ -6,30 +6,31 @@ const headers = {
   "X-API-Key": apiKey,
 };
 
-export const getUserByUsername = async () => {
-  await fetch(`https://atlantic-little-snipe.glitch.me/translations`)
-    .then((response) => response.json())
-    .then((results) => {
-      console.log(results);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+export default {};
+
+export const loginOrCreateByUsername = async (username) => {
+  const response = await fetch(apiURL + "/translations?username=" + username);
+  if (response.status === 200 || response.status === 201) {
+    const user = await response.json();
+    if (user[0] && user[0] !== "undefined") return { user: user[0] };
+  }
+
+  return await createUser(username);
 };
 
-export const createUser = async (username, translations = []) => {
-  const response = await fetch(`${apiURL}/translations`, {
-    method: "POST",
+export const createUser = async (username) => {
+  const createResponse = await fetch(apiURL + "/translations", {
+    method: "post",
     headers: headers,
     body: JSON.stringify({
-      username,
-      translations,
+      username: username,
+      translations: [],
     }),
   });
-  if (!response.ok) {
-    throw new Error("Could not create new user");
+  if (createResponse.status === 200 || createResponse.status === 201) {
+    const user = await createResponse.json();
+    return { user };
   }
-  return await response.json();
 };
 
 export const updateUserTranslations = async (userId, translations) => {

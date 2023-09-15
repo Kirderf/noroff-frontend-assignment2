@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import InputField from "../../components/inputField/InputField";
 import { useUser } from "../../contexts/UserProvider";
-import { getUserByUsername } from "../../services/UserService";
+import { loginOrCreateByUsername } from "../../services/UserService";
 
 function Login() {
   const { setUser, user } = useUser();
 
-  function handleLogin(username) {
-    getUserByUsername();
-    setUser(username);
+  async function handleLogin(inputWord) {
+    event.preventDefault();
+    console.log(await loginOrCreateByUsername(inputWord));
+    setUser({ ...(await loginOrCreateByUsername(inputWord)) });
+    console.log("User: ", user.user.username);
   }
 
   return (
