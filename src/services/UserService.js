@@ -1,20 +1,23 @@
-const apiURL = "your-api-url-goes-here";
-const apiKey = "your-public-api-key-goes-here";
+const apiURL = "https://atlantic-little-snipe.glitch.me";
+const apiKey = "";
 
 const headers = {
   "Content-Type": "application/json",
   "X-API-Key": apiKey,
 };
 
-const getUserByUsername = async (username) => {
-  const response = await fetch(`${apiURL}/translations?username=${username}`);
-  if (!response.ok) {
-    throw new Error("Failed to fetch user by username");
-  }
-  return await response.json();
+export const getUserByUsername = async () => {
+  await fetch(`https://atlantic-little-snipe.glitch.me/translations`)
+    .then((response) => response.json())
+    .then((results) => {
+      console.log(results);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
-const createUser = async (username, translations = []) => {
+export const createUser = async (username, translations = []) => {
   const response = await fetch(`${apiURL}/translations`, {
     method: "POST",
     headers: headers,
@@ -29,7 +32,7 @@ const createUser = async (username, translations = []) => {
   return await response.json();
 };
 
-const updateUserTranslations = async (userId, translations) => {
+export const updateUserTranslations = async (userId, translations) => {
   const response = await fetch(`${apiURL}/translations/${userId}`, {
     method: "PATCH",
     headers: headers,
@@ -42,5 +45,3 @@ const updateUserTranslations = async (userId, translations) => {
   }
   return await response.json();
 };
-
-export { getUserByUsername, createUser, updateUserTranslations };

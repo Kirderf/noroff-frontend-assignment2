@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import InputField from "../../components/inputField/InputField";
 import { useUser } from "../../contexts/UserProvider";
+import { getUserByUsername } from "../../services/UserService";
 
-const Login = () => {
-  const { setUser } = useUser();
-  const [username, setUsername] = React.useState("");
+function Login() {
+  const { setUser, user } = useUser();
 
   function handleLogin(username) {
-    console.log(username);
+    getUserByUsername();
+    setUser(username);
   }
 
   return (
@@ -51,6 +52,6 @@ const Login = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Login;
