@@ -10,7 +10,11 @@ const Header = () => {
     <header className="flex flex-wrap z-50 w-full text-sm py-4 bg-yellow border-b-4 border-b-gray">
       <div className="centering">
         <nav
+<<<<<<< HEAD
           className="flex flex-nowrap w-full sm:flex sm:items-center sm:justify-between"
+=======
+          class="flex flex-nowrap w-full sm:flex sm:items-center sm:justify-between"
+>>>>>>> 559b17f (changes to header styling, userContext and userservice)
           aria-label="Global"
         >
           <div onClick={() => navigate("/")}>

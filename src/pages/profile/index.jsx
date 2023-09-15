@@ -13,6 +13,7 @@ const Profile = () => {
     "dæ dsahjk asdhkj",
     "går dshjk dashkj",
   ];
+
   return (
     <div className="bg-yellow w-full h-44 pt-8">
       <div className="centering pb-3">
