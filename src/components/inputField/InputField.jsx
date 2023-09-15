@@ -14,13 +14,13 @@ function InputField({ placeHolder, onSubmit }) {
             viewBox="0 0 1920.00 1920.00"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               stroke="#CCCCCC"
-              stroke-width="7.68"
+              strokeWidth="7.68"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
@@ -52,22 +52,22 @@ function InputField({ placeHolder, onSubmit }) {
             xmlns="http://www.w3.org/2000/svg"
             stroke="#ffffff"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               stroke="#CCCCCC"
-              stroke-width="0.048"
+              strokeWidth="0.048"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
               <path
                 d="M5 12H19M19 12L13 6M19 12L13 18"
                 stroke="#ffffff"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></path>{" "}
             </g>
           </svg>
