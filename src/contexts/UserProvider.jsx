@@ -12,7 +12,7 @@ const UserProvider = ({ children }) => {
 
   const setUserAndStore = (user) => {
     setUser(user);
-    localStorage.setItem("user", JSON.stringify(user));
+    if(user !== undefined) localStorage.setItem("user", JSON.stringify(user));
   };
 
   return (
