@@ -17,6 +17,7 @@ const Header = () => {
         >
           <IconWithTitle />
           <div id="navbar-image-and-text-2" className="grow block gap-2">
+<<<<<<< HEAD
               <div className="flex flex-row items-center justify-end">
               {user?.user?.username && 
               <div className=" bg-yellow-dark rounded-2xl pr-14 pl-5 py-0.5">
@@ -29,6 +30,20 @@ const Header = () => {
                 href="profile"
               />
             </div>
+=======
+            <a href="">
+              <div className="flex flex-row items-center justify-end">
+                <div className=" bg-yellow-dark rounded-2xl pr-14 pl-5 py-0.5">
+                  <p className="text-white">{user?.user?.username}</p>
+                </div>
+                <img
+                  className="w-12 h-auto absolute  bg-yellow-dark rounded-full"
+                  src="./src/assets/profileUser.svg"
+                  alt="Logo"
+                />
+              </div>
+            </a>
+>>>>>>> 51e6c8d (routing to profile page)
           </div>
         </nav>
       </div>
