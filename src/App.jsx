@@ -14,7 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         {/* TODO NAVIGATE TO LOGIN */}
-        <Route path="/" element={<Navigate to={"/login"}/>} />
+        <Route path="/" element={<Navigate to={"/translate"}/>} />
         <Route path="*" element={<Error code={404} />} />
 
       </Routes>
