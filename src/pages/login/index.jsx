@@ -1,8 +1,27 @@
-import React from "react";
-import InputField from "../../components/InputField";
-import IconWithTitle from "../../components/iconTitle/IconWithTitle";
+import React, { useEffect } from "react";
+import InputField from "../../components/inputField/InputField";
+import { useUser } from "../../contexts/UserProvider";
+import { loginOrCreateByUsername } from "../../services/UserService";
+import { Navigate } from "react-router-dom";
 
-const Login = () => {
+function Login() {
+  const { user, setUser } = useUser();
+
+  async function handleLogin(inputWord) {
+    event.preventDefault();
+
+    const newUser = await loginOrCreateByUsername(inputWord);
+    console.log(newUser);
+
+    setUser(newUser);
+  }
+
+  useEffect(() => {
+    if (user && user.user) {
+      console.log("User: ", user.user.username);
+    }
+  }, [user]);
+
   return (
     <section className="flex flex-col relative">
       <div className=" bg-yellow w-full h-72 flex items-center justify-center">
@@ -34,7 +53,8 @@ const Login = () => {
         <div className="centering">
           <div className="shadow-2xl rounded-2xl h-auto w-full flex flex-col justify-center items-start bg-white">
             <div className="flex flex-wrap h-auto p-10 w-full">
-              <InputField placeHolder={"Username:"} />
+            {user && (<Navigate to="/translate" replace={true} />)}
+              <InputField placeHolder={"Username:"} onSubmit={handleLogin} />
             </div>
             <div className="w-full bg-purple rounded-b-2xl h-12 flex justify-start items-center">
               <div className="w-auto m-5 bg-white rounded-full"></div>
@@ -44,6 +64,6 @@ const Login = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Login;

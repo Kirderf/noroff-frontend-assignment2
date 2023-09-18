@@ -1,6 +1,6 @@
-import React from 'react'
-import InputField from '../../components/InputField'
-import AuthGuard from '../auth/AuthGuard'
+import React from "react";
+import InputField from "../../components/inputField/InputField";
+import AuthGuard from "../auth/AuthGuard";
 
 const Profile = () => {
   const list = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis", "ke sadh jksdhakj", "dæ dsahjk asdhkj", "går dshjk dashkj","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis", "ke sadh jksdhakj", "dæ dsahjk asdhkj", "går dshjk dashkj"]
@@ -34,4 +34,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default AuthGuard(Profile);
