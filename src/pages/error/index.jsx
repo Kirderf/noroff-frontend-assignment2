@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Error = () => {
+const Error = (props) => {
+  const url = "https://http.cat/" + props.code
   return (
-    <div>error</div>
+    <div>
+      <img src={url}/>
+    </div>
   )
 }
 

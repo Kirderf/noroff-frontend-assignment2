@@ -16,7 +16,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         {/* TODO NAVIGATE TO LOGIN */}
         <Route path="/" element={<p>ll</p>} />
-        <Route path="/error" element={<Error />} />
+        <Route path="*" element={<Error code={404} />} />
       </Routes>
     </BrowserRouter>
   );
