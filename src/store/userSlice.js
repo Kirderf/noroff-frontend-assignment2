@@ -38,7 +38,6 @@ export const getUserOrLogin = createAsyncThunk(
 export const addTranslation = createAsyncThunk(
   "user/addTranslation",
   async (payload) => {
-    console.log(payload);
     const response = await fetch(apiURL + "/translations/" + payload.id, {
       method: "PATCH",
       mode: "cors",
