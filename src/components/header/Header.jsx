@@ -1,10 +1,11 @@
 import React from "react";
 import IconWithTitle from "../iconTitle/IconWithTitle";
-import { useUser } from "../../contexts/UserProvider";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const Header = () => {
-  const { user, setUser } = useUser();
+  const user = useSelector((state) => state.user);
+
   const navigate = useNavigate();
   return (
     <header className="flex flex-wrap z-50 w-full text-sm py-4 bg-yellow border-b-4 border-b-gray">
@@ -22,9 +23,9 @@ const Header = () => {
               className="flex flex-row items-center justify-end"
               onClick={() => navigate("/profile")}
             >
-              {user?.user?.username && (
+              {user.username && (
                 <div className=" bg-yellow-dark rounded-2xl pr-14 pl-5 py-0.5">
-                  <p className="text-white">{user?.user?.username}</p>
+                  <p className="text-white">{user.username}</p>
                 </div>
               )}
               <img

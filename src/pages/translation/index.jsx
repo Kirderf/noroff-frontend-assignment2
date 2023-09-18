@@ -1,20 +1,17 @@
 import React from "react";
-import { useUser } from "../../contexts/UserProvider";
 import InputField from "../../components/inputField/InputField";
 
 import AuthGuard from "../auth/AuthGuard";
-import { updateUserTranslations } from "../../services/UserService";
+import { useDispatch } from "react-redux";
 
 const Translation = () => {
   const [transelation, setTranslation] = React.useState("");
 
-  const { user } = useUser();
+  const dispatch = useDispatch();
 
   async function handleTranselation(inputWord) {
     setTranslation(inputWord);
     console.log(transelation);
-
-    console.log(user);
 
     let newTranslation = [...user.user.translations];
 
@@ -22,15 +19,7 @@ const Translation = () => {
 
     newTranslation.unshift(inputWord);
 
-    try {
-      const response = await updateUserTranslations({
-        id: user.user.id,
-        translations: newTranslation,
-      });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(setTranslation(newTranslation));
   }
 
   return (

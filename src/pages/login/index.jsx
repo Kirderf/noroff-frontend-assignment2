@@ -1,26 +1,16 @@
 import React, { useEffect } from "react";
 import InputField from "../../components/inputField/InputField";
-import { useUser } from "../../contexts/UserProvider";
-import { loginOrCreateByUsername } from "../../services/UserService";
 import { Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserOrLogin } from "../../store/userSlice";
 
 function Login() {
-  const { user, setUser } = useUser();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
-  async function handleLogin(inputWord) {
-    event.preventDefault();
-
-    const newUser = await loginOrCreateByUsername(inputWord);
-    console.log(newUser);
-
-    setUser(newUser);
+  function handleLogin(inputWord) {
+    dispatch(getUserOrLogin(inputWord));
   }
-
-  useEffect(() => {
-    if (user && user.user) {
-      console.log("User: ", user.user.username);
-    }
-  }, [user]);
 
   return (
     <section className="flex flex-col relative">

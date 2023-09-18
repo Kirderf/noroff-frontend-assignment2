@@ -1,5 +1,4 @@
 import React from "react";
-import InputField from "../../components/inputField/InputField";
 import AuthGuard from "../auth/AuthGuard";
 
 const Profile = () => {
@@ -20,7 +19,7 @@ const Profile = () => {
         <div className="shadow-2xl rounded-2xl max-h-screen w-full flex overflow-auto flex-col justify-center items-start bg-white">
           <div className="flex flex-col h-auto p-10 w-full gap-2 ">
             {list.map((element, index) => (
-              <div class="rounded overflow-hidden shadow-lg">
+              <div class="rounded overflow-hidden shadow-lg" key={index}>
                 <div class="px-6 py-4">
                   <p class="text-gray-700 font-sans">{element}</p>
                 </div>
