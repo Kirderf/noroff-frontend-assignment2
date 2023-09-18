@@ -5,20 +5,10 @@ import Translation from "./pages/translation";
 import Error from "./pages/error";
 import Header from "./components/header/Header";
 
-import { useEffect } from "react";
-
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function App() {
   const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser && storedUser !== "undefined") {
-      dispatch(setUser(JSON.parse(storedUser)));
-    }
-  }, []);
 
   return (
     <BrowserRouter>

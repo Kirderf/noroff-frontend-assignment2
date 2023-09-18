@@ -13,13 +13,10 @@ export const getUserOrLogin = createAsyncThunk(
   "user/getUserOrLogin",
   async (payload) => {
     const response = await fetch(apiURL + "/translations?username=" + payload);
-    if (response.ok) {
+    if (response.status === 200 || response.status === 201) {
       const user = await response.json();
       return { user: user[0] };
-    } else {
-      console.log("User not found");
     }
-
     const createResponse = await fetch(apiURL + "/translations", {
       method: "post",
       headers: headers,
