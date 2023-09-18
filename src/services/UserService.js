@@ -1,5 +1,5 @@
 const apiURL = "https://atlantic-little-snipe.glitch.me";
-const apiKey = "";
+const apiKey = import.meta.env.VITE_API_KEY ;
 
 const headers = {
   "Content-Type": "application/json",
@@ -9,6 +9,7 @@ const headers = {
 export default {};
 
 export const loginOrCreateByUsername = async (username) => {
+  console.log(import.meta.env.API_KEY)
   const response = await fetch(apiURL + "/translations?username=" + username);
   if (response.status === 200 || response.status === 201) {
     const user = await response.json();
