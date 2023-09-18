@@ -70,4 +70,4 @@ const Translation = () => {
   );
 };
 
-export default AuthGuard(Translation);
+export default Translation;

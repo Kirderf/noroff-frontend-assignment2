@@ -20,7 +20,7 @@ const persistMiddleware = (store) => (next) => (action) => {
   }
 
   if (action.type === "user/removeUser") {
-    localStorage.setItem("user", JSON.stringify({}));
+    localStorage.removeItem("user");
   }
   return result;
 };

@@ -7,6 +7,7 @@ import { setUser } from "../../store/userSlice";
 
 import { useEffect } from "react";
 
+//Deprecated.
 const AuthGuard = (Component) => (props) => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
