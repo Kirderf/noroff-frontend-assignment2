@@ -1,5 +1,6 @@
 import React from "react";
 import IconWithTitle from "../iconTitle/IconWithTitle";
+import { useUser } from "../../contexts/UserProvider";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { removeUser } from "../../store/userSlice";
