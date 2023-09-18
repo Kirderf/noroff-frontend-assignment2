@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const apiURL = "https://atlantic-little-snipe.glitch.me";
+const apiURL = "https://different-foremost-top.glitch.me";
 
 const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -15,7 +15,7 @@ export const getUserOrLogin = createAsyncThunk(
     const response = await fetch(apiURL + "/translations?username=" + payload);
     if (response.status === 200 || response.status === 201) {
       const user = await response.json();
-      return { user: user[0] };
+      if (user[0] && user[0].username !== undefined) return { user: user[0] };
     }
     const createResponse = await fetch(apiURL + "/translations", {
       method: "post",

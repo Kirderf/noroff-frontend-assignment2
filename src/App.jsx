@@ -5,7 +5,9 @@ import Translation from "./pages/translation";
 import Error from "./pages/error";
 import Header from "./components/header/Header";
 
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
   const user = useSelector((state) => state.user);
