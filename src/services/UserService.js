@@ -1,5 +1,5 @@
 const apiURL = "https://atlantic-little-snipe.glitch.me";
-const apiKey = "";
+const apiKey = import.meta.env.VITE_API_KEY ;
 
 const headers = {
   "Content-Type": "application/json",
