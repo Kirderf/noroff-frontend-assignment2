@@ -9,7 +9,7 @@ const persistMiddleware = (store) => (next) => (action) => {
   const allowedPeristed = [
     "user/setUser",
     "user/getUserOrLogin/fulfilled",
-    "user/setTranslation/fulfilled",
+    "user/addTranslation/fulfilled",
   ];
 
   const result = next(action);

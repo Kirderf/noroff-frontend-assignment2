@@ -2,8 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const apiURL = "https://atlantic-little-snipe.glitch.me";
 
-const apiKey =
-  "qlTH2MemiUxmpXQ31OhZ3akdPqKO6RRqwD0ikPvYAGZQb1c6NuclVbK9VNU4XFKO";
+const apiKey = import.meta.env.VITE_API_KEY;
 
 const headers = {
   "Content-Type": "application/json",
@@ -36,19 +35,16 @@ export const getUserOrLogin = createAsyncThunk(
   }
 );
 
-export const setTranslation = createAsyncThunk(
-  "user/setTranslation",
+export const addTranslation = createAsyncThunk(
+  "user/addTranslation",
   async (payload) => {
-    console.log();
-    const response = await fetch(
-      process.env.REACT_APP_API_URL + "/translations/" + payload.id,
-      {
-        method: "PATCH",
-        mode: "cors",
-        headers: headers,
-        body: JSON.stringify({ translations: payload.translations }),
-      }
-    );
+    console.log(payload);
+    const response = await fetch(apiURL + "/translations/" + payload.id, {
+      method: "PATCH",
+      mode: "cors",
+      headers: headers,
+      body: JSON.stringify({ translations: payload.translations }),
+    });
     if (
       response.status === 200 ||
       response.status === 201 ||
@@ -82,7 +78,7 @@ export const userSlice = createSlice({
       .addCase(getUserOrLogin.rejected, (state, action) => {
         return action.payload.user.error;
       });
-    builder.addCase(setTranslation.fulfilled, (state, action) => {
+    builder.addCase(addTranslation.fulfilled, (state, action) => {
       return action.payload.user;
     });
   },

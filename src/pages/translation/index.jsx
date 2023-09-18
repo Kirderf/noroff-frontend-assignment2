@@ -2,24 +2,29 @@ import React from "react";
 import InputField from "../../components/inputField/InputField";
 
 import AuthGuard from "../auth/AuthGuard";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addTranslation } from "../../store/userSlice";
 
 const Translation = () => {
   const [transelation, setTranslation] = React.useState("");
 
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   async function handleTranselation(inputWord) {
+    event.preventDefault();
     setTranslation(inputWord);
     console.log(transelation);
 
-    let newTranslation = [...user.user.translations];
+    let newTranslation = [...user.translations];
 
     console.log(newTranslation);
 
     newTranslation.unshift(inputWord);
 
-    dispatch(setTranslation(newTranslation));
+    dispatch(addTranslation({ id: user.id, translations: newTranslation }));
+
+    console.log(newTranslation);
   }
 
   return (
