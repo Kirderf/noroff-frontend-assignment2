@@ -8,14 +8,23 @@ import Header from "./components/header/Header";
 import { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "./store/userSlice";
 
 function App() {
   const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser !== "undefined") {
+      dispatch(setUser(JSON.parse(storedUser)));
+    }
+  }, []);
 
   return (
     <BrowserRouter>
       <Header />
-      {!user.username ? (
+      {!user?.username ? (
         <Login />
       ) : (
         <Routes>

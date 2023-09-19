@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import InputField from "../../components/inputField/InputField";
-import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserOrLogin } from "../../store/userSlice";
 
@@ -8,6 +7,7 @@ function Login() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
+  //Checks if the user is logged in, if so, redirect to the translation page.
   function handleLogin(inputWord) {
     dispatch(getUserOrLogin(inputWord));
     event.preventDefault();

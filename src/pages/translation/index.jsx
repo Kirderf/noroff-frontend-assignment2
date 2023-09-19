@@ -1,7 +1,6 @@
 import React from "react";
 import InputField from "../../components/inputField/InputField";
 
-import AuthGuard from "../auth/AuthGuard";
 import { useDispatch, useSelector } from "react-redux";
 import { addTranslation } from "../../store/userSlice";
 
@@ -11,6 +10,7 @@ const Translation = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
+  //Handles the translations of the input and adds it to the user.
   async function handleTranselation(inputWord) {
     event.preventDefault();
     setTranslation(inputWord);
@@ -25,7 +25,7 @@ const Translation = () => {
   return (
     <section className="flex flex-col">
       <div className="relative bg-yellow w-full h-60 flex items-center justify-center">
-        <div className="centering">
+        <div className="centering animate-ease-in animate-once animate-fade-right">
           <InputField
             placeHolder={"Any translaterino?"}
             onSubmit={handleTranselation}
@@ -33,7 +33,7 @@ const Translation = () => {
         </div>
       </div>
       <div className="centering">
-        <div className="w-full shadow-2xl rounded-2xl h-auto mt-20 flex flex-col justify-center items-start">
+        <div className="w-full shadow-2xl rounded-2xl h-auto mt-20 flex flex-col justify-center items-start animate-ease-in animate-once animate-fade-up">
           <div className="p-5 flex flex-wrap h-64">
             {transelation
               .toLowerCase()

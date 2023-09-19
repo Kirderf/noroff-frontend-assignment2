@@ -1,5 +1,4 @@
 import React from "react";
-import AuthGuard from "../auth/AuthGuard";
 import { useSelector, useDispatch } from "react-redux";
 import { addTranslation } from "../../store/userSlice";
 
@@ -7,13 +6,16 @@ const Profile = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
+  /*
+   * Handles the deletion of the translations
+   */
   function handleDelete() {
     dispatch(addTranslation({ id: user.id, translations: [] }));
   }
 
   return (
     <div className="bg-yellow w-full h-44 pt-8">
-      <div className="centering pb-3">
+      <div className="centering pb-3 animate-ease-in animate-once animate-fade-up">
         <div className="shadow-2xl rounded-t-2xl max-h-screen w-full flex overflow-auto flex-col justify-center items-start bg-white">
           <div className="flex flex-col h-auto p-10 w-full gap-2 ">
             {user.translations.map((element, index) => (

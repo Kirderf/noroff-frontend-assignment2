@@ -24,7 +24,7 @@ const Header = () => {
           <div onClick={() => navigate("/")}>
             <IconWithTitle />
           </div>
-          {user.username && (
+          {user?.username && (
             <>
               <div id="navbar-image-and-text-2" className="grow block gap-2">
                 <div
@@ -33,7 +33,7 @@ const Header = () => {
                 >
                   {user.username && (
                     <div className=" bg-yellow-dark rounded-2xl pr-14 pl-5 py-0.5">
-                      <p className="text-white">{user.username}</p>
+                      <p className="text-white">{user?.username}</p>
                     </div>
                   )}
                   <img
@@ -46,7 +46,7 @@ const Header = () => {
               </div>
             </>
           )}
-          {user.username && (
+          {user?.username && (
             <div className="flex flex-row items-center justify-end">
               <button
                 onClick={handleLogout}
