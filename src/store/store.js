@@ -12,7 +12,7 @@ const presistMiddleware = (store) => (next) => (action) => {
 
   const result = next(action);
 
-  if (allowedActions.includes(action.type) && action.payload.user) {
+  if (allowedActions.includes(action.type) && action.payload?.user) {
     localStorage.setItem("user", JSON.stringify(action.payload.user));
   }
 
