@@ -1,8 +1,67 @@
-# React + Vite
+# Noroff Frontend Assignment 2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a frontend application for the Noroff Assignment 2, implementing a sign language translator using React and Vite.
+![Image](./docs/pageFlow.png)
+## Table of Contents 
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Development](#development)
+  - [Running Locally](#running-locally)
+  - [Building the Project](#building-the-project)
+- [Contributing](#contributing)
+- [License](#license)
+## Getting Started
 
-Currently, two official plugins are available:
+### Prerequisites
+- Node.js (LTS version recommended)
+- npm or yarn
+### Installation 
+1. Clone the repository:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+
+git clone https://github.com/Kirderf/noroff-frontend-assignment2.git
+``` 
+2. Install dependencies:
+
+```bash
+
+cd noroff-frontend-assignment2
+npm install
+```
+## Usage
+
+To use the application, follow the steps under [Getting Started](#getting-started)  to set up the project. Once the project is set up, you can run it locally and access the application through your browser.
+## Development
+### Running Locally
+
+To run the application locally for development:
+
+```bash
+
+npm run dev
+```
+
+
+
+This will start the development server, and you can access the application at `http://localhost:5173`.
+### Building the Project
+
+To build the project for production:
+
+```bash
+
+npm run build
+```
+
+
+
+This will create a production-ready build in the `dist` directory.
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow the standard GitHub fork, branch, and pull request workflow.
+## License
+
+This project is licensed under the [MIT License](#LICENSE)
