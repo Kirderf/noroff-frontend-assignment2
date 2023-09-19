@@ -5,19 +5,34 @@ import Translation from "./pages/translation";
 import Error from "./pages/error";
 import Header from "./components/header/Header";
 
+import { useEffect } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "./store/userSlice";
+
 function App() {
+  const user = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser !== "undefined") {
+      dispatch(setUser(JSON.parse(storedUser)));
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="/translate" element={<Translation />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-        {/* TODO NAVIGATE TO LOGIN */}
-        <Route path="/" element={<Navigate to={"/translate"}/>} />
-        <Route path="*" element={<Error code={404} />} />
-
-      </Routes>
+      {!user?.username ? (
+        <Login />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Translation />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Error code={404} />} />
+        </Routes>
+      )}
     </BrowserRouter>
   );
 }
