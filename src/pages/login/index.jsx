@@ -25,13 +25,13 @@ function Login() {
         <div className="centering">
           <div className="flex animate-ease-in animate-once animate-fade-right">
             <img
-              className="relative bg-[url('./src/assets/Backgroundicon.svg')] bg-[10%_100%] w-64 max-w-3xl bottom-0 px-3 py-1"
+              className="relative bg-[url('/assets/Backgroundicon.svg')] bg-[10%_100%] w-64 max-w-3xl bottom-0 px-3 py-1"
               style={{
                 backgroundSize: "100% 120%",
                 backgroundPositionY: "-12px",
                 backgroundRepeat: "no-repeat",
               }}
-              src="./src/assets/Logo.png"
+              src="/assets/Logo.png"
               alt="Logo"
             />
             <div

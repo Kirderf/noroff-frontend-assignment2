@@ -43,7 +43,7 @@ const Translation = () => {
                 return (
                   <img
                     key={index}
-                    src={`./src/assets/individial_signs/${letter}.png`}
+                    src={`assets/individial_signs/${letter}.png`}
                     alt={letter}
                     className="w-16 h-16"
                   />

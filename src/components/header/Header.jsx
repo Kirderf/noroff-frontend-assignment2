@@ -39,7 +39,7 @@ const Header = () => {
                   )}
                   <img
                     className="w-12 h-auto absolute  bg-yellow-dark rounded-full"
-                    src="./src/assets/profileUser.svg"
+                    src="/assets/profileUser.svg"
                     alt="Logo"
                     href="profile"
                   />
