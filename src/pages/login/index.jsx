@@ -17,7 +17,7 @@ function Login() {
     <section className="flex flex-col relative">
       <div className=" bg-yellow w-full h-72 flex items-center justify-center">
         <div className="centering">
-          <div className="flex">
+          <div className="flex animate-ease-in animate-once animate-fade-right">
             <img
               className="relative bg-[url('./src/assets/Backgroundicon.svg')] bg-[10%_100%] w-64 max-w-3xl bottom-0 px-3 py-1"
               style={{
@@ -42,7 +42,7 @@ function Login() {
       </div>
       <div className="bg-yellow w-full h-24">
         <div className="centering">
-          <div className="shadow-2xl rounded-2xl h-auto w-full flex flex-col justify-center items-start bg-white">
+          <div className="shadow-2xl rounded-2xl h-auto w-full flex flex-col justify-center items-start bg-white animate-ease-in animate-once animate-fade-up">
             <div className="flex flex-wrap h-auto p-10 w-full">
               <InputField placeHolder={"Username:"} onSubmit={handleLogin} />
             </div>

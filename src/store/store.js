@@ -8,7 +8,4 @@ export default configureStore({
   reducer: {
     user: userSlice,
   },
-
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([persistMiddleware]),
 });

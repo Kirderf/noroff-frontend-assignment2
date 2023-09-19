@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const apiURL = "https://different-foremost-top.glitch.me";
-
+const apiURL = import.meta.env.VITE_API_URL;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const headers = {
@@ -9,6 +8,9 @@ const headers = {
   "X-API-Key": apiKey,
 };
 
+/**
+ * Gets the user from the database or creates a new user if the user does not exist.
+ */
 export const getUserOrLogin = createAsyncThunk(
   "user/getUserOrLogin",
   async (payload) => {
@@ -32,6 +34,9 @@ export const getUserOrLogin = createAsyncThunk(
   }
 );
 
+/**
+ * Adds a translation to the user.
+ */
 export const addTranslation = createAsyncThunk(
   "user/addTranslation",
   async (payload) => {

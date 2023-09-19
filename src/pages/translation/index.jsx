@@ -14,17 +14,12 @@ const Translation = () => {
   async function handleTranselation(inputWord) {
     event.preventDefault();
     setTranslation(inputWord);
-    console.log(transelation);
 
     let newTranslation = [...user.translations];
-
-    console.log(newTranslation);
 
     newTranslation.unshift(inputWord);
 
     dispatch(addTranslation({ id: user.id, translations: newTranslation }));
-
-    console.log(newTranslation);
   }
 
   return (
@@ -45,7 +40,6 @@ const Translation = () => {
               .split("")
               .filter((letter) => letter !== " ")
               .map((letter, index) => {
-                console.log(letter);
                 return (
                   <img
                     key={index}
